@@ -1,3 +1,5 @@
+# made by https://github.com/dr1408
+
 echo "=== $(date) Mounting all filesystems ==="
 
 mkdir -p /mnt1 /mnt2 /mnt6 /mnt7 /mnt8
@@ -97,9 +99,9 @@ fi
 echo "  Mounting Data..."
 mount_role Data /mnt2
 
-# Wait 15 seconds for mount to settle
-echo "  Waiting 15 seconds for mount to settle..."
-sleep 15
+# Wait 5 seconds for mount to settle
+echo "  Waiting 5 seconds for mount to settle..."
+sleep 5
 
 if mount | grep -q "/mnt2"; then
     echo "  OK Data mounted at /mnt2"

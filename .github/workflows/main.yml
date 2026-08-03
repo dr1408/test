@@ -17,7 +17,7 @@ jobs:
       - name: Download and decrypt ramdisk
         run: |
           set -ex
-          IPSW_URL="https://updates.cdn-apple.com/2025WinterFCS/fullrestores/072-67238/0B0AA2FF-B865-48C3-858F-EBECD1D83D41/iPad_10.2_2020_18.3_22D63_Restore.ipsw"
+          IPSW_URL="https://updates.cdn-apple.com/2026WinterFCS/fullrestores/122-34179/047B0DE1-4C17-4CBB-ACA7-1EBBF92EE193/iPhone11,8_18.7.9_22H355_Restore.ipsw"
 
           ./pzb -g BuildManifest.plist "$IPSW_URL"
           RAMDISK_PATH=$(grep -A50 "RestoreRamDisk" BuildManifest.plist | grep -A1 "Path" | tail -1 | sed 's/.*<string>\(.*\)<\/string>.*/\1/')
@@ -59,7 +59,7 @@ jobs:
       - name: Build trustcache
         run: |
           set -ex
-          ./img4 -i 044-59017-076.dmg.trustcache -o trustcache.bin
+          ./img4 -i 094-32271-023.dmg.trustcache -o trustcache.bin
           mkdir -p work/sshtar
           ./gtar -x --no-overwrite-dir -f ssh.tar.gz -C work/sshtar
           cp mount_filesystems.safe work/sshtar/usr/bin/mount_filesystems
